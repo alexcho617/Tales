@@ -20,7 +20,7 @@ class ShelfViewController: UIViewController {
         self.performSegue(withIdentifier: "goToRead", sender: self)
     }
     @IBAction func addPressed(_ sender: UIButton) {
-        print("Add Pressed")
+        print("Plus Pressed")
         self.performSegue(withIdentifier: "goToNewBook", sender: self)
         //self.dismiss(animated: true, completion: nil)
     }

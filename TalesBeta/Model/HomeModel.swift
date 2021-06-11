@@ -33,7 +33,7 @@ class HomeModel: NSObject, URLSessionDataDelegate {
                 if error != nil {
                     print("Failed to download data")
                 }else {
-                    print("Data downloaded")
+                    //print("Data downloaded")
                     self.parseJSON(data!)
                 }
                 
@@ -43,7 +43,7 @@ class HomeModel: NSObject, URLSessionDataDelegate {
         }
     
     func parseJSON(_ data:Data) {
-            print("Parse JSOON function called")
+            //print("Parse JSOON function called")
             var jsonResult = NSArray()
             
             do{
@@ -56,11 +56,11 @@ class HomeModel: NSObject, URLSessionDataDelegate {
             
             var jsonElement = NSDictionary()
             let books = NSMutableArray() //array to store all books
-            print("books array created")
+            //print("books array created")
            
             for i in 0 ..< jsonResult.count
             {
-                print(jsonResult[i])//testing
+                //print(jsonResult[i],"HomeModel.swift")//testing
                 jsonElement = jsonResult[i] as! NSDictionary
                 
                 let book = BookModel() //single book object
@@ -77,7 +77,7 @@ class HomeModel: NSObject, URLSessionDataDelegate {
             
             DispatchQueue.main.async(execute: { () -> Void in
                 
-                self.delegate.itemsDownloaded(items: books)
+                self.delegate.itemsDownloaded(items: books) //passed back to newbok viewcontroller
                 
             })
         }

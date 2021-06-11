@@ -9,13 +9,12 @@ import UIKit
 class NewBookViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HomeModelProtocol {
     //Properties
     
-    var feedItems: NSArray = NSArray()
-    var selectedLocation : BookModel = BookModel()
+    var feedItems: NSArray = NSArray() //where urlsession stores results
+    var selectedBook : BookModel = BookModel()
     
     @IBOutlet weak var listTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("NewBook Loaded")
         // Do any additional setup after loading the view.
         
         self.listTableView.delegate = self
@@ -26,12 +25,9 @@ class NewBookViewController: UIViewController, UITableViewDataSource, UITableVie
         homeModel.downloadItems()
     }
     
-    @IBAction func donePressed(_ sender: UIButton) {
-        print("Done Pressed")
-        self.dismiss(animated: true, completion: nil)
-    }
+    
     func itemsDownloaded(items: NSArray) {
-        
+
         feedItems = items
         self.listTableView.reloadData()
     }
@@ -43,7 +39,7 @@ class NewBookViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        selectedBook = feedItems[indexPath.row] as! BookModel
         // Retrieve cell
         let cellIdentifier: String = "BasicCell"
         let myCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)!
@@ -54,14 +50,23 @@ class NewBookViewController: UIViewController, UITableViewDataSource, UITableVie
         
         return myCell
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Set selected location to var
+        selectedBook = feedItems[indexPath.row] as! BookModel
+        print("Selected Book:",selectedBook.name!,"BookID:",selectedBook.id!)
+        self.dismiss(animated: true, completion: nil)
+        
     }
-    */
+        
+//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//            // Get reference to the destination view controller
+//            let detailVC  = segue.destination as! DetailViewController
+//            // Set the property to the selected location so when the view for
+//            // detail view controller loads, it can access that property to get the feeditem obj
+//            detailVC.selectedBook = selectedBook
+//        }
+
 
 }
