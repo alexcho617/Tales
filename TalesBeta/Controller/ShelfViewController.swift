@@ -13,16 +13,23 @@ class ShelfViewController: UIViewController {
     var idGlobal: String = "myID"
     
    
+    @IBOutlet weak var bookButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Shelf Loaded")
+        bookButton.setImage(#imageLiteral(resourceName: "64"), for: .normal)
         // Do any additional setup after loading the view.
     }
     
     @IBAction func bookPressed(_ sender: UIButton) {
-        print("Book Selected")
-        self.performSegue(withIdentifier: "goToRead", sender: self)
+        if idGlobal != "myID" {
+            print("Book Selected")
+            self.performSegue(withIdentifier: "goToRead", sender: self)
+        }
+        else {
+            print("No Book")
+        }
     }
     @IBAction func addPressed(_ sender: UIButton) {
         print("Plus Pressed")

@@ -17,22 +17,18 @@ class ReadModel: NSObject, URLSessionDataDelegate {
     var ipAddress: String
     var idGlobal: String
     var fileType: String
-    var urlPath: String
     
     override init() {
         ipAddress = "http://34.239.175.64/book"
         idGlobal = "1"
         fileType = ".php"
-        urlPath = ipAddress+idGlobal+fileType
-        
-        print("urlPath in ReadModel init():", urlPath)
     }
    
-    
     weak var delegate: ReadModelProtocol!
     var data = Data()
-    // = ipAddress+idGlobal,fileType //changed this to ipAddress + book ID format
     func downloadItems() {
+            let urlPath = ipAddress+idGlobal+fileType
+            //print("urlPath in ReadModel downloadItems:", urlPath)
             let url: URL = URL(string: urlPath)!
             let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
             let task = defaultSession.dataTask(with: url) { (data, response, error) in

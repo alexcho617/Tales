@@ -89,29 +89,29 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAL-0v-YcW">
+                                <rect key="frame" x="27" y="128" width="64" height="64"/>
+                                <state key="normal" image="64"/>
+                                <connections>
+                                    <action selector="bookPressed:" destination="cHa-fN-7av" eventType="touchUpInside" id="kJp-EH-han"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xg-9a-XjZ">
+                                <rect key="frame" x="164" y="128" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Check Value"/>
+                                <connections>
+                                    <action selector="checkButton:" destination="cHa-fN-7av" eventType="touchUpInside" id="faS-TX-5OW"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0J7-tZ-wIo">
-                                <rect key="frame" x="160" y="374" width="51" height="113"/>
+                                <rect key="frame" x="336" y="88" width="51" height="113"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="84"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="addPressed:" destination="cHa-fN-7av" eventType="touchUpInside" id="8nZ-Qa-DTL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAL-0v-YcW">
-                                <rect key="frame" x="27" y="128" width="74" height="30"/>
-                                <state key="normal" title="Read Book"/>
-                                <connections>
-                                    <action selector="bookPressed:" destination="cHa-fN-7av" eventType="touchUpInside" id="kJp-EH-han"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xg-9a-XjZ">
-                                <rect key="frame" x="164" y="84" width="86" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Check Value"/>
-                                <connections>
-                                    <action selector="checkButton:" destination="cHa-fN-7av" eventType="touchUpInside" id="faS-TX-5OW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -121,18 +121,19 @@
                             <constraint firstItem="pey-xe-7OK" firstAttribute="trailing" secondItem="xyT-Vx-Dqc" secondAttribute="trailing" id="41P-a6-AGO"/>
                             <constraint firstItem="Y6k-Sd-nhQ" firstAttribute="leading" secondItem="xyT-Vx-Dqc" secondAttribute="leading" constant="27" id="6mK-lR-QUq"/>
                             <constraint firstItem="pey-xe-7OK" firstAttribute="leading" secondItem="xyT-Vx-Dqc" secondAttribute="leading" id="UFk-04-UHl"/>
-                            <constraint firstItem="0J7-tZ-wIo" firstAttribute="top" secondItem="Y6k-Sd-nhQ" secondAttribute="bottom" constant="286" id="WXR-b7-ysf"/>
+                            <constraint firstItem="0J7-tZ-wIo" firstAttribute="top" secondItem="Y6k-Sd-nhQ" secondAttribute="bottom" id="WXR-b7-ysf"/>
                             <constraint firstAttribute="bottom" secondItem="pey-xe-7OK" secondAttribute="bottom" id="YZO-2k-AB4" userLabel="background.bottom = Safe Area.bottom"/>
-                            <constraint firstItem="0J7-tZ-wIo" firstAttribute="leading" secondItem="xyT-Vx-Dqc" secondAttribute="leading" constant="160" id="Ye6-Cq-F1W"/>
                             <constraint firstItem="pey-xe-7OK" firstAttribute="top" secondItem="xyT-Vx-Dqc" secondAttribute="top" constant="-44" id="YpB-l3-hwE"/>
                             <constraint firstItem="xyT-Vx-Dqc" firstAttribute="trailing" secondItem="Y6k-Sd-nhQ" secondAttribute="trailing" constant="27" id="b3n-0X-iOW"/>
                             <constraint firstItem="OAL-0v-YcW" firstAttribute="top" secondItem="Y6k-Sd-nhQ" secondAttribute="bottom" constant="40" id="b5Q-xW-9L5"/>
                             <constraint firstItem="Y6k-Sd-nhQ" firstAttribute="top" secondItem="xyT-Vx-Dqc" secondAttribute="top" id="dCP-vs-SIO"/>
                             <constraint firstItem="OAL-0v-YcW" firstAttribute="leading" secondItem="xyT-Vx-Dqc" secondAttribute="leading" constant="27" id="ktN-5m-aGD"/>
+                            <constraint firstItem="xyT-Vx-Dqc" firstAttribute="trailing" secondItem="0J7-tZ-wIo" secondAttribute="trailing" constant="27" id="lyF-7i-oYk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bJD-6P-8xL"/>
                     <connections>
+                        <outlet property="bookButton" destination="OAL-0v-YcW" id="i7r-J6-Jtd"/>
                         <segue destination="FEg-Rm-KOX" kind="presentation" identifier="goToNewBook" modalPresentationStyle="currentContext" id="b7M-7a-c4d"/>
                         <segue destination="TIh-Fy-7az" kind="presentation" identifier="goToRead" modalPresentationStyle="currentContext" id="7Ja-gA-yaY"/>
                     </connections>
@@ -253,9 +254,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="b7M-7a-c4d"/>
         <segue reference="x2Q-MH-w5n"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="64" width="64" height="64"/>
         <image name="background" width="2124" height="1062"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

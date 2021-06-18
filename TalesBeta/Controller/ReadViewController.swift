@@ -14,6 +14,7 @@ class ReadViewController: UIViewController, ReadModelProtocol {
     
     var bookGlobal: String = "myBook"
     var idGlobal: String = "myID"
+    var chapterGlobal: Int = 5
     
     @IBOutlet weak var bookTitleLabel: UILabel!
     @IBOutlet weak var chapterLabel: UILabel!
@@ -26,20 +27,25 @@ class ReadViewController: UIViewController, ReadModelProtocol {
         // Do any additional setup after loading the view.
         let readModel = ReadModel()
         
-        //readModel.bookGlobal = bookGlobal
         readModel.idGlobal = idGlobal
         
         readModel.delegate = self
         readModel.downloadItems()
-        
+        //view
         bookTitleLabel.text = bookGlobal
-        chapterLabel.text = idGlobal
+        chapterLabel.text = "Ch."+String(chapterGlobal)
     }
     
     func itemsDownloaded(items: NSArray) {
         feedItems = items
-        let chapterContents = feedItems.componentsJoined(by: " ")
-        textView.text = chapterContents
+        var chapterContents = ContentsModel()
+        //print("feedItems.count:",feedItems.count)
+        print("Chapter:",chapterGlobal)
+        chapterContents = feedItems[chapterGlobal-1] as! ContentsModel //cast from any to ContentsModel -1 for index correction
+        //print(chapterContents.contents ?? "Empty")
+        
+        let strContents = chapterContents.contents //cast as a String
+        textView.text = strContents
     }
     
     @IBAction func donePressed(_ sender: UIButton) {
