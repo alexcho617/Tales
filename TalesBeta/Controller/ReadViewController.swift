@@ -7,27 +7,34 @@
 
 import UIKit
 
-class ReadViewController: UIViewController {
-
+class ReadViewController: UIViewController, ReadModelProtocol {
+    
+    var feedItems: NSArray = NSArray() //where urlsession stores results
+    var selectedBook : ContentsModel = ContentsModel()
+    
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Read Loaded")
+       
         // Do any additional setup after loading the view.
+        let readModel = ReadModel()
+        readModel.delegate = self
+        readModel.downloadItems()
     }
     
+    func itemsDownloaded(items: NSArray) {
 
+        feedItems = items
+        let chapterContents = feedItems.componentsJoined(by: " ")
+        //print("This is What i got",feedItems,"print from ReadViewController, func itemsDownloaded")
+        //contentsLabel.text = chapterContents
+        textView.text = chapterContents
+    }
+    
     @IBAction func donePressed(_ sender: UIButton) {
         print("Finished Reading")
         self.dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

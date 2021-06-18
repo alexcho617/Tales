@@ -3,7 +3,7 @@
 //  TalesBeta
 //
 //  Created by alex on 2021/06/10.
-//
+//  book model used in HomeModel.swift
 
 import Foundation
 

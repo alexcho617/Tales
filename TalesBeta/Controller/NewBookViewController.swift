@@ -13,10 +13,9 @@ class NewBookViewController: UIViewController, UITableViewDataSource, UITableVie
     var selectedBook : BookModel = BookModel()
     
     @IBOutlet weak var listTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         self.listTableView.delegate = self
         self.listTableView.dataSource = self
         
@@ -59,14 +58,4 @@ class NewBookViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
         
-//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//            // Get reference to the destination view controller
-//            let detailVC  = segue.destination as! DetailViewController
-//            // Set the property to the selected location so when the view for
-//            // detail view controller loads, it can access that property to get the feeditem obj
-//            detailVC.selectedBook = selectedBook
-//        }
-
-
 }
