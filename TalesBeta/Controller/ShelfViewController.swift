@@ -18,8 +18,9 @@ class ShelfViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Shelf Loaded")
-        bookButton.setImage(#imageLiteral(resourceName: "64"), for: .normal)
-        // Do any additional setup after loading the view.
+        if idGlobal == "1" {
+            bookButton.setImage(#imageLiteral(resourceName: "64"), for: .normal)
+        }
     }
     
     @IBAction func bookPressed(_ sender: UIButton) {
@@ -35,10 +36,6 @@ class ShelfViewController: UIViewController {
         print("Plus Pressed")
         self.performSegue(withIdentifier: "goToNewBook", sender: self)
         //self.dismiss(animated: true, completion: nil)
-    }
-    @IBAction func checkButton(_ sender: UIButton) {
-        print("Selected Book:",bookGlobal)
-        print("Selected ID:",idGlobal)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
