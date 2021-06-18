@@ -14,10 +14,24 @@ protocol ReadModelProtocol: AnyObject {
 
 
 class ReadModel: NSObject, URLSessionDataDelegate {
-    //properties
+    var ipAddress: String
+    var idGlobal: String
+    var fileType: String
+    var urlPath: String
+    
+    override init() {
+        ipAddress = "http://34.239.175.64/book"
+        idGlobal = "1"
+        fileType = ".php"
+        urlPath = ipAddress+idGlobal+fileType
+        
+        print("urlPath in ReadModel init():", urlPath)
+    }
+   
+    
     weak var delegate: ReadModelProtocol!
     var data = Data()
-    let urlPath: String = "http://34.239.175.64/book2.php" //this will be changed to the path where service.php lives
+    // = ipAddress+idGlobal,fileType //changed this to ipAddress + book ID format
     func downloadItems() {
             let url: URL = URL(string: urlPath)!
             let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
@@ -60,7 +74,7 @@ class ReadModel: NSObject, URLSessionDataDelegate {
                 }
                 pages.add(page) //add a book entry to books
             }
-        //passed back to newbok viewcontroller
+        //passed back to newbook viewcontroller
         DispatchQueue.main.async(execute: { () -> Void in self.delegate.itemsDownloaded(items: pages)})
         }
 }

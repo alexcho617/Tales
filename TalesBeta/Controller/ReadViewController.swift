@@ -12,6 +12,11 @@ class ReadViewController: UIViewController, ReadModelProtocol {
     var feedItems: NSArray = NSArray() //where urlsession stores results
     var selectedBook : ContentsModel = ContentsModel()
     
+    var bookGlobal: String = "myBook"
+    var idGlobal: String = "myID"
+    
+    @IBOutlet weak var bookTitleLabel: UILabel!
+    @IBOutlet weak var chapterLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
@@ -20,16 +25,20 @@ class ReadViewController: UIViewController, ReadModelProtocol {
        
         // Do any additional setup after loading the view.
         let readModel = ReadModel()
+        
+        //readModel.bookGlobal = bookGlobal
+        readModel.idGlobal = idGlobal
+        
         readModel.delegate = self
         readModel.downloadItems()
+        
+        bookTitleLabel.text = bookGlobal
+        chapterLabel.text = idGlobal
     }
     
     func itemsDownloaded(items: NSArray) {
-
         feedItems = items
         let chapterContents = feedItems.componentsJoined(by: " ")
-        //print("This is What i got",feedItems,"print from ReadViewController, func itemsDownloaded")
-        //contentsLabel.text = chapterContents
         textView.text = chapterContents
     }
     

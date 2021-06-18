@@ -47,7 +47,7 @@ class HomeModel: NSObject, URLSessionDataDelegate {
             //print("books array created")
             for i in 0 ..< jsonResult.count
             {
-                //print(jsonResult[i],"HomeModel.swift")//testing
+                //print(jsonResult[i],"HomeModel.swift")//debuggin testing
                 jsonElement = jsonResult[i] as! NSDictionary
                 let book = BookModel() //single book object
                 //the following insures none of the JsonElement values are nil through optional binding

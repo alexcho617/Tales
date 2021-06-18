@@ -100,10 +100,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAL-0v-YcW">
-                                <rect key="frame" x="27" y="128" width="35" height="30"/>
-                                <state key="normal" title="Book"/>
+                                <rect key="frame" x="27" y="128" width="74" height="30"/>
+                                <state key="normal" title="Read Book"/>
                                 <connections>
                                     <action selector="bookPressed:" destination="cHa-fN-7av" eventType="touchUpInside" id="kJp-EH-han"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xg-9a-XjZ">
+                                <rect key="frame" x="164" y="84" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Check Value"/>
+                                <connections>
+                                    <action selector="checkButton:" destination="cHa-fN-7av" eventType="touchUpInside" id="faS-TX-5OW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -125,7 +133,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="bJD-6P-8xL"/>
                     <connections>
-                        <segue destination="FEg-Rm-KOX" kind="presentation" identifier="goToNewBook" id="b7M-7a-c4d"/>
+                        <segue destination="FEg-Rm-KOX" kind="presentation" identifier="goToNewBook" modalPresentationStyle="currentContext" id="b7M-7a-c4d"/>
                         <segue destination="TIh-Fy-7az" kind="presentation" identifier="goToRead" modalPresentationStyle="currentContext" id="7Ja-gA-yaY"/>
                     </connections>
                 </viewController>
@@ -138,7 +146,7 @@
             <objects>
                 <viewController id="FEg-Rm-KOX" customClass="NewBookViewController" customModule="TalesBeta" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0KS-Pg-mmS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="CIG-ut-jk8">
@@ -165,8 +173,10 @@
                         <viewLayoutGuide key="safeArea" id="SSO-ES-KJT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gL4-hd-nqM"/>
                     <connections>
                         <outlet property="listTableView" destination="ZmD-G3-dxs" id="Cob-Rs-8Ce"/>
+                        <segue destination="cHa-fN-7av" kind="presentation" identifier="goBackToShelf" modalPresentationStyle="currentContext" id="x2Q-MH-w5n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqg-VU-UDV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -184,14 +194,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="1aq-Qz-9Yb">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter 26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XE-IK-oom">
-                                <rect key="frame" x="236" y="44" width="86" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XE-IK-oom">
+                                <rect key="frame" x="285" y="44" width="61.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Little Prince" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-hG-Aoo">
-                                <rect key="frame" x="92" y="44" width="124" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-hG-Aoo">
+                                <rect key="frame" x="169" y="44" width="76" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -215,14 +225,14 @@
                         <viewLayoutGuide key="safeArea" id="omc-h3-nfC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cJZ-hG-Aoo" firstAttribute="leading" secondItem="omc-h3-nfC" secondAttribute="leading" constant="92" id="2uQ-pa-o3K"/>
+                            <constraint firstItem="cJZ-hG-Aoo" firstAttribute="centerX" secondItem="omc-h3-nfC" secondAttribute="centerX" id="2uQ-pa-o3K"/>
                             <constraint firstItem="Vo0-TP-CvM" firstAttribute="top" secondItem="gZe-tp-nMN" secondAttribute="bottom" constant="38" id="AOk-zI-Wov"/>
                             <constraint firstItem="Vo0-TP-CvM" firstAttribute="bottom" secondItem="omc-h3-nfC" secondAttribute="bottom" id="D5F-Dx-PpV"/>
                             <constraint firstItem="gZe-tp-nMN" firstAttribute="leading" secondItem="omc-h3-nfC" secondAttribute="leading" constant="25" id="ERA-tM-64p"/>
                             <constraint firstItem="1aq-Qz-9Yb" firstAttribute="top" secondItem="omc-h3-nfC" secondAttribute="top" constant="-44" id="KOW-RF-32Z"/>
                             <constraint firstItem="1aq-Qz-9Yb" firstAttribute="bottom" secondItem="omc-h3-nfC" secondAttribute="bottom" constant="34" id="Kat-Hw-Ubm"/>
                             <constraint firstItem="Vo0-TP-CvM" firstAttribute="trailing" secondItem="omc-h3-nfC" secondAttribute="trailing" id="Oet-iS-yhH"/>
-                            <constraint firstItem="0XE-IK-oom" firstAttribute="leading" secondItem="cJZ-hG-Aoo" secondAttribute="trailing" constant="20" id="Ucy-g6-Gmu"/>
+                            <constraint firstItem="0XE-IK-oom" firstAttribute="leading" secondItem="cJZ-hG-Aoo" secondAttribute="trailing" constant="40" id="Ucy-g6-Gmu"/>
                             <constraint firstItem="cJZ-hG-Aoo" firstAttribute="top" secondItem="omc-h3-nfC" secondAttribute="top" id="WIX-Fq-c8b"/>
                             <constraint firstItem="Vo0-TP-CvM" firstAttribute="leading" secondItem="omc-h3-nfC" secondAttribute="leading" id="bNa-YF-dSr"/>
                             <constraint firstItem="1aq-Qz-9Yb" firstAttribute="leading" secondItem="omc-h3-nfC" secondAttribute="leading" id="fTG-Ic-i2A"/>
@@ -232,6 +242,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bookTitleLabel" destination="cJZ-hG-Aoo" id="R56-Ns-pjd"/>
+                        <outlet property="chapterLabel" destination="0XE-IK-oom" id="CDz-cQ-Epd"/>
                         <outlet property="textView" destination="Vo0-TP-CvM" id="ZNO-oR-N75"/>
                     </connections>
                 </viewController>
@@ -240,6 +252,9 @@
             <point key="canvasLocation" x="1034.7826086956522" y="811.60714285714278"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="x2Q-MH-w5n"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="background" width="2124" height="1062"/>
         <systemColor name="labelColor">

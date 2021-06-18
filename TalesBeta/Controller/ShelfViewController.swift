@@ -8,7 +8,12 @@
 import UIKit
 
 class ShelfViewController: UIViewController {
-
+    
+    var bookGlobal: String = "myBook"
+    var idGlobal: String = "myID"
+    
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Shelf Loaded")
@@ -24,15 +29,16 @@ class ShelfViewController: UIViewController {
         self.performSegue(withIdentifier: "goToNewBook", sender: self)
         //self.dismiss(animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func checkButton(_ sender: UIButton) {
+        print("Selected Book:",bookGlobal)
+        print("Selected ID:",idGlobal)
     }
-    */
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToRead" {
+            let destinationVC = segue.destination as! ReadViewController
+            destinationVC.bookGlobal = bookGlobal
+            destinationVC.idGlobal = idGlobal
+        }
+    }
 }
