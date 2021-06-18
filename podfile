@@ -1,0 +1,3 @@
+target 'TalesBeta' do
+    pod 'AWSAPIGateway', '~> 2.4.7'
+end
