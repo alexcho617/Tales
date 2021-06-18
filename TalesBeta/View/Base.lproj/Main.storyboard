@@ -202,6 +202,45 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mck-TO-0q8">
+                                <rect key="frame" x="257" y="69" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="btnPlayAudio:" destination="TIh-Fy-7az" eventType="touchUpInside" id="BB0-eD-zcd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fT9-0X-4gB">
+                                <rect key="frame" x="304" y="69" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="btnPauseAudio:" destination="TIh-Fy-7az" eventType="touchUpInside" id="oCS-ut-bbs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eX-kR-TYq">
+                                <rect key="frame" x="362" y="69" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="btnStopAudio:" destination="TIh-Fy-7az" eventType="touchUpInside" id="lHZ-uf-Jl2"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HFj-8E-SH0">
+                                <rect key="frame" x="106" y="68" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="swRecordMode:" destination="TIh-Fy-7az" eventType="valueChanged" id="z9c-Sb-jnk"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDu-Ju-H3c">
+                                <rect key="frame" x="169" y="68" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="btnRecord:" destination="TIh-Fy-7az" eventType="touchUpInside" id="wRw-Ny-c17"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="omc-h3-nfC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -224,6 +263,10 @@
                     </view>
                     <connections>
                         <outlet property="bookTitleLabel" destination="cJZ-hG-Aoo" id="R56-Ns-pjd"/>
+                        <outlet property="btnPause" destination="fT9-0X-4gB" id="aSn-Rv-9G8"/>
+                        <outlet property="btnPlay" destination="mck-TO-0q8" id="1QR-9R-H14"/>
+                        <outlet property="btnRecord" destination="WDu-Ju-H3c" id="QO0-q2-Ot1"/>
+                        <outlet property="btnStop" destination="4eX-kR-TYq" id="Plp-H3-Fas"/>
                         <outlet property="chapterLabel" destination="0XE-IK-oom" id="CDz-cQ-Epd"/>
                         <outlet property="textView" destination="Vo0-TP-CvM" id="ZNO-oR-N75"/>
                     </connections>
