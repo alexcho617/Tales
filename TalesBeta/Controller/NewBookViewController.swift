@@ -67,7 +67,7 @@ class NewBookViewController: UIViewController, UITableViewDataSource, UITableVie
         print(postString)
         request.httpBody = postString.data(using: String.Encoding.utf8)
 
-        let task = URLSession.shared.dataTask(with: request as URLRequest) { [self]
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
             data, response, error in
                 
             if error != nil {
@@ -92,6 +92,7 @@ class NewBookViewController: UIViewController, UITableViewDataSource, UITableVie
             let destinationVC = segue.destination as! ShelfViewController
             destinationVC.bookGlobal = bookGlobal
             destinationVC.idGlobal = idGlobal
+            destinationVC.userGlobal = userGlobal
         }
     }
 }
