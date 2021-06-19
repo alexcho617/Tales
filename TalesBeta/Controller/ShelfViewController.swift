@@ -33,6 +33,30 @@ class ShelfViewController: UIViewController {
     }
     
     @IBAction func rankPressed(_ sender: UIButton) {
+        let request = NSMutableURLRequest(url: NSURL(string: "http://34.239.175.64/createview.php")! as URL)
+        request.httpMethod = "POST"
+        
+        let postString = "UserID=" + userGlobal
+        request.httpBody = postString.data(using: String.Encoding.utf8)
+
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+            data, response, error in
+                
+            if error != nil {
+                print("error=\(String(describing: error))")
+                return
+            }
+            print("response = \(String(describing: response))")
+            
+            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            
+            print("responseString = \(String(describing: responseString))")
+
+        }
+        
+        task.resume()
+        
+        
         print("Rank Selected")
         self.performSegue(withIdentifier: "goToRank", sender: self)
     }
