@@ -32,6 +32,10 @@ class ShelfViewController: UIViewController {
 //        }
     }
     
+    @IBAction func rankPressed(_ sender: UIButton) {
+        print("Rank Selected")
+        self.performSegue(withIdentifier: "goToRank", sender: self)
+    }
     @IBAction func bookPressed(_ sender: UIButton) {
         if idGlobal != "myID" {
             print("Book Selected")

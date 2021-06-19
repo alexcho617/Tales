@@ -10,24 +10,41 @@ import AVFoundation
 
 class ReadViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDelegate, ReadModelProtocol {
     
+    
+    
+    
     var feedItems: NSArray = NSArray() //where urlsession stores results
     var selectedBook : ContentsModel = ContentsModel()
     
     var bookGlobal: String = "myBook"
     var idGlobal: String = "myID"
-    var chapterGlobal: Int = 5
+    var chapterGlobal: Int = 1
+    var totalChapter = 1
     
+    //@IBOutlet weak var chapterPicker: UIPickerView!
     @IBOutlet weak var bookTitleLabel: UILabel!
     @IBOutlet weak var chapterLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
+    
+//    @IBAction func chapterPlusPressed(_ sender: UIButton) {
+//        chapterGlobal = chapterGlobal + 1
+//        print("chapterGlobal:", chapterGlobal)
+//    }
+//    
+//    @IBAction func chapterMinusPressed(_ sender: UIButton) {
+//        
+//        chapterGlobal = chapterGlobal - 1
+//        print("chapterGlobal:", chapterGlobal)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Read Loaded")
        
         // Do any additional setup after loading the view.
-        let readModel = ReadModel()
         
+        let readModel = ReadModel()
+
         readModel.idGlobal = idGlobal
         
         readModel.delegate = self
@@ -46,10 +63,32 @@ class ReadViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecord
         }
     }
     
+    /*
+     pickerview stuff
+     */
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return totalChapter
+//    }
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return String(row) //will simply return number
+//    }
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        chapterGlobal = row
+//    }
+    
+    /*
+     book Data from server
+     */
     func itemsDownloaded(items: NSArray) {
         feedItems = items
         var chapterContents = ContentsModel()
-        //print("feedItems.count:",feedItems.count)
+        totalChapter = feedItems.count
+        print("totalChapter:",totalChapter)
+
         print("Chapter:",chapterGlobal)
         chapterContents = feedItems[chapterGlobal-1] as! ContentsModel //cast from any to ContentsModel -1 for index correction
         //print(chapterContents.contents ?? "Empty")
@@ -63,6 +102,9 @@ class ReadViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecord
         self.dismiss(animated: true, completion: nil)
     }
     
+    /*
+     Below is Audio Recording Part
+     */
     @IBOutlet var btnPlay: UIButton!
     @IBOutlet var btnPause: UIButton!
     @IBOutlet var btnStop: UIButton!

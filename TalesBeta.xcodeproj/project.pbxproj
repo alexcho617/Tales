@@ -19,6 +19,7 @@
 		5D01F3DA267D2C1C005D2695 /* Wiz-Khalifa-See-You-Again.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5D01F3D9267D2C1C005D2695 /* Wiz-Khalifa-See-You-Again.mp3 */; };
 		FA269BA22674D34600EB87F6 /* ContentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA269BA12674D34600EB87F6 /* ContentsModel.swift */; };
 		FA269BA42674DD2500EB87F6 /* ReadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA269BA32674DD2500EB87F6 /* ReadModel.swift */; };
+		FA618210267E232100B37920 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61820F267E232100B37920 /* RankViewController.swift */; };
 		FA8E61352672465000DBFF1A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E61342672465000DBFF1A /* HomeModel.swift */; };
 		FA8E61372672468A00DBFF1A /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E61362672468A00DBFF1A /* BookModel.swift */; };
 		FA922324267DCC470090ACED /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA922323267DCC470090ACED /* SignupViewController.swift */; };
@@ -39,6 +40,7 @@
 		5D01F3D9267D2C1C005D2695 /* Wiz-Khalifa-See-You-Again.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Wiz-Khalifa-See-You-Again.mp3"; sourceTree = "<group>"; };
 		FA269BA12674D34600EB87F6 /* ContentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsModel.swift; sourceTree = "<group>"; };
 		FA269BA32674DD2500EB87F6 /* ReadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadModel.swift; sourceTree = "<group>"; };
+		FA61820F267E232100B37920 /* RankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
 		FA8E61342672465000DBFF1A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		FA8E61362672468A00DBFF1A /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		FA922323267DCC470090ACED /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				57BD7CB8265429EE00618472 /* ViewController.swift */,
+				FA61820F267E232100B37920 /* RankViewController.swift */,
 				57D7D71C2656C53100CF4B31 /* NewBookViewController.swift */,
 				57D7D71E2656C89300CF4B31 /* ReadViewController.swift */,
 				57BD7CC826542C2800618472 /* ShelfViewController.swift */,
@@ -191,6 +194,7 @@
 			files = (
 				57BD7CC926542C2800618472 /* ShelfViewController.swift in Sources */,
 				57BD7CB9265429EE00618472 /* ViewController.swift in Sources */,
+				FA618210267E232100B37920 /* RankViewController.swift in Sources */,
 				FA922324267DCC470090ACED /* SignupViewController.swift in Sources */,
 				57BD7CB5265429EE00618472 /* AppDelegate.swift in Sources */,
 				FA8E61352672465000DBFF1A /* HomeModel.swift in Sources */,
