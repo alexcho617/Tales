@@ -12,10 +12,12 @@ class NewBookViewController: UIViewController, UITableViewDataSource, UITableVie
     var selectedBook : BookModel = BookModel()
     var bookGlobal: String = "myBook"
     var idGlobal: String = "myID"
+    var userGlobal: String = "myUser"
     
     @IBOutlet weak var listTableView: UITableView!
     
     override func viewDidLoad() {
+        print("userGlobal:", userGlobal)
         super.viewDidLoad()
         self.listTableView.delegate = self
         self.listTableView.dataSource = self
@@ -55,7 +57,7 @@ class NewBookViewController: UIViewController, UITableViewDataSource, UITableVie
         bookGlobal = selectedBook.name! //global variable
         idGlobal = selectedBook.id! //global variable
         /*
-         seague prep to send data back?
+         shelf.php here
          */
         self.performSegue(withIdentifier: "goBackToShelf", sender: self)
     }

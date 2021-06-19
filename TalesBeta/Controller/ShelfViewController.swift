@@ -11,7 +11,7 @@ class ShelfViewController: UIViewController {
     
     var bookGlobal: String = "myBook"
     var idGlobal: String = "myID"
-    
+    var userGlobal: String = "myUser"
    
     @IBOutlet weak var bookButton: UIButton!
     @IBOutlet weak var bookButton2: UIButton!
@@ -23,12 +23,13 @@ class ShelfViewController: UIViewController {
         if idGlobal == "1" {
             bookButton.setImage(#imageLiteral(resourceName: "128-1"), for: .normal)
         }
-        if idGlobal == "2" {
-            bookButton2.setImage(#imageLiteral(resourceName: "128"), for: .normal)
-        }
-        if idGlobal == "3" {
-            bookButton3.setImage(#imageLiteral(resourceName: "128-2"), for: .normal)
-        }
+//image function broken
+//        if idGlobal == "2" {
+//            bookButton2.setImage(#imageLiteral(resourceName: "128"), for: .normal)
+//        }
+//        if idGlobal == "3" {
+//            bookButton3.setImage(#imageLiteral(resourceName: "128-2"), for: .normal)
+//        }
     }
     
     @IBAction func bookPressed(_ sender: UIButton) {
@@ -51,6 +52,10 @@ class ShelfViewController: UIViewController {
             let destinationVC = segue.destination as! ReadViewController
             destinationVC.bookGlobal = bookGlobal
             destinationVC.idGlobal = idGlobal
+        }
+        if segue.identifier == "goToNewBook" {
+            let destinationVC = segue.destination as! NewBookViewController
+            destinationVC.userGlobal = userGlobal
         }
     }
 }

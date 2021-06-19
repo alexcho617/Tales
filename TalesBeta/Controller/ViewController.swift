@@ -61,6 +61,11 @@ class ViewController: UIViewController {
 
     }
     
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToSecond" {
+            let destinationVC = segue.destination as! ShelfViewController
+            destinationVC.userGlobal = UserID.text ?? "myUser"
+        }
+    }
 }
 
