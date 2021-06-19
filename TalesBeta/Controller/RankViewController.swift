@@ -10,6 +10,7 @@ import UIKit
 class RankViewController: UIViewController {
 
     @IBAction func backPressed(_ sender: UIButton) {
+        print("Rnank Loaded")
         self.dismiss(animated: false, completion: nil)
 
     }
