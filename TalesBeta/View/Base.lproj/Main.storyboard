@@ -79,6 +79,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Age" destination="Zl6-uu-thz" id="1eA-mP-uFO"/>
+                        <outlet property="Gender" destination="ZeO-8y-QmW" id="EG6-M4-Mod"/>
+                        <outlet property="Name" destination="xcn-20-0Ri" id="RF6-pk-72X"/>
+                        <outlet property="UserID" destination="F0Q-hP-z60" id="oPP-Dh-6E5"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToLogIn" modalPresentationStyle="currentContext" id="JbM-mq-ZDt"/>
                     </connections>
                 </viewController>
@@ -168,6 +172,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Name" destination="Nr8-PJ-k5w" id="OWL-ee-aaC"/>
+                        <outlet property="UserID" destination="qqC-kS-JYA" id="PAc-Az-P6B"/>
                         <segue destination="cHa-fN-7av" kind="presentation" identifier="goToSecond" modalPresentationStyle="currentContext" id="x4K-eh-hOh"/>
                         <segue destination="Q0m-0s-xBC" kind="presentation" identifier="goToSignUp" modalPresentationStyle="currentContext" id="yBM-Ty-y6B"/>
                     </connections>

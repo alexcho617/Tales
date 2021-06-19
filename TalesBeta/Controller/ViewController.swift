@@ -17,9 +17,43 @@ class ViewController: UIViewController {
         
     }
 
+    @IBOutlet weak var UserID: UITextField!
+    @IBOutlet weak var Name: UITextField!
+    
     @IBAction func logInPressed(_ sender: UIButton) {
         print("Login Pressed")
-        self.performSegue(withIdentifier: "goToSecond", sender: self)
+        
+        let request = NSMutableURLRequest(url: NSURL(string: "http://34.239.175.64/login.php")! as URL)
+        request.httpMethod = "POST"
+        
+        let postString = "UserID=\(UserID.text!)&Name=\(Name.text!)"
+        request.httpBody = postString.data(using: String.Encoding.utf8)
+
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { [self]
+            data, response, error in
+                
+            if error != nil {
+                print("error=\(String(describing: error))")
+                return
+            }
+            print("response = \(String(describing: response))")
+            
+            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            
+            print("responseString = \(String(describing: responseString))")
+            
+            if String(describing: responseString) == "Optional(1)"{
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "goToSecond", sender: self)
+                }
+                print("successed\n");
+            }
+            else{
+                print("failed\n");
+            }
+        }
+        
+        task.resume()
     }
     
     @IBAction func signUpPressed(_ sender: UIButton) {

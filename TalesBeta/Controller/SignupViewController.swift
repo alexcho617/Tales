@@ -18,10 +18,35 @@ class SignupViewController: UIViewController {
         
         
     }
+    @IBOutlet weak var UserID: UITextField!
+    @IBOutlet weak var Name: UITextField!
+    @IBOutlet weak var Gender: UITextField!
+    @IBOutlet weak var Age: UITextField!
     
     @IBAction func signUpPressed(_ sender: UIButton) {
+        let request = NSMutableURLRequest(url: NSURL(string: "http://34.239.175.64/signup.php")! as URL)
+        request.httpMethod = "POST"
+        
+        let postString = "UserID=\(UserID.text!)&Name=\(Name.text!)&Gender=\(Gender.text!)&Age=\(Age.text!)"
+        request.httpBody = postString.data(using: String.Encoding.utf8)
+
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+                data, response, error in
+                
+                if error != nil {
+                    print("error=\(String(describing: error))")
+                    return
+                }
+                print("response = \(String(describing: response))")
+                
+                let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                
+                print("responseString = \(String(describing: responseString))")
+            }
+        task.resume()
+        
+        
         self.performSegue(withIdentifier: "goToLogIn", sender: self)
-   
     }
 
     
