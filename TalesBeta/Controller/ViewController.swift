@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "goToSecond", sender: self)
     }
     
+    @IBAction func signUpPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToSignUp", sender: self)
+
+    }
     
    
 }

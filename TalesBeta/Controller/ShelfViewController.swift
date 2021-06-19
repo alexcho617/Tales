@@ -14,12 +14,20 @@ class ShelfViewController: UIViewController {
     
    
     @IBOutlet weak var bookButton: UIButton!
+    @IBOutlet weak var bookButton2: UIButton!
+    @IBOutlet weak var bookButton3: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Shelf Loaded")
         if idGlobal == "1" {
-            bookButton.setImage(#imageLiteral(resourceName: "64"), for: .normal)
+            bookButton.setImage(#imageLiteral(resourceName: "128-1"), for: .normal)
+        }
+        if idGlobal == "2" {
+            bookButton2.setImage(#imageLiteral(resourceName: "128"), for: .normal)
+        }
+        if idGlobal == "3" {
+            bookButton3.setImage(#imageLiteral(resourceName: "128-2"), for: .normal)
         }
     }
     

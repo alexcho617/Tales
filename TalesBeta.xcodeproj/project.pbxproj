@@ -21,6 +21,7 @@
 		FA269BA42674DD2500EB87F6 /* ReadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA269BA32674DD2500EB87F6 /* ReadModel.swift */; };
 		FA8E61352672465000DBFF1A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E61342672465000DBFF1A /* HomeModel.swift */; };
 		FA8E61372672468A00DBFF1A /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E61362672468A00DBFF1A /* BookModel.swift */; };
+		FA922324267DCC470090ACED /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA922323267DCC470090ACED /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FA269BA32674DD2500EB87F6 /* ReadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadModel.swift; sourceTree = "<group>"; };
 		FA8E61342672465000DBFF1A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		FA8E61362672468A00DBFF1A /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		FA922323267DCC470090ACED /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				57D7D71C2656C53100CF4B31 /* NewBookViewController.swift */,
 				57D7D71E2656C89300CF4B31 /* ReadViewController.swift */,
 				57BD7CC826542C2800618472 /* ShelfViewController.swift */,
+				FA922323267DCC470090ACED /* SignupViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			files = (
 				57BD7CC926542C2800618472 /* ShelfViewController.swift in Sources */,
 				57BD7CB9265429EE00618472 /* ViewController.swift in Sources */,
+				FA922324267DCC470090ACED /* SignupViewController.swift in Sources */,
 				57BD7CB5265429EE00618472 /* AppDelegate.swift in Sources */,
 				FA8E61352672465000DBFF1A /* HomeModel.swift in Sources */,
 				57D7D71D2656C53100CF4B31 /* NewBookViewController.swift in Sources */,

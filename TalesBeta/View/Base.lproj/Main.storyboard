@@ -8,6 +8,84 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Signup View Controller-->
+        <scene sceneID="ish-9m-fTv">
+            <objects>
+                <viewController storyboardIdentifier="SignupViewController" id="Q0m-0s-xBC" customClass="SignupViewController" customModule="TalesBeta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dtj-Jt-mMf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" id="oVl-pc-c6p">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User ID" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="F0Q-hP-z60">
+                                <rect key="frame" x="86" y="321" width="242" height="51"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="xcn-20-0Ri">
+                                <rect key="frame" x="86" y="380" width="242" height="51"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ZeO-8y-QmW">
+                                <rect key="frame" x="86" y="439" width="242" height="51"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Zl6-uu-thz">
+                                <rect key="frame" x="86" y="498" width="242" height="51"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hr-Vp-oxE">
+                                <rect key="frame" x="163" y="557" width="88" height="53"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="12"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="SIGN UP">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fhy-JX-mAV"/>
+                                    <action selector="signUpPressed:" destination="Q0m-0s-xBC" eventType="touchUpInside" id="HHe-vG-Ack"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QYB-p0-c3K"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xcn-20-0Ri" firstAttribute="trailing" secondItem="QYB-p0-c3K" secondAttribute="trailing" constant="-86" id="04m-44-ffw"/>
+                            <constraint firstItem="Zl6-uu-thz" firstAttribute="leading" secondItem="QYB-p0-c3K" secondAttribute="leading" constant="86" id="Al2-Au-0n3"/>
+                            <constraint firstItem="Zl6-uu-thz" firstAttribute="top" secondItem="ZeO-8y-QmW" secondAttribute="bottom" constant="8" id="I7T-iu-Rgm"/>
+                            <constraint firstItem="7hr-Vp-oxE" firstAttribute="centerX" secondItem="QYB-p0-c3K" secondAttribute="centerX" id="JwZ-OA-Cnx"/>
+                            <constraint firstItem="F0Q-hP-z60" firstAttribute="leading" secondItem="QYB-p0-c3K" secondAttribute="leading" constant="86" id="Mgc-vl-FBn"/>
+                            <constraint firstItem="ZeO-8y-QmW" firstAttribute="leading" secondItem="QYB-p0-c3K" secondAttribute="leading" constant="86" id="TAE-zt-5Ax"/>
+                            <constraint firstItem="ZeO-8y-QmW" firstAttribute="top" secondItem="xcn-20-0Ri" secondAttribute="bottom" constant="8" id="UVa-er-1jD"/>
+                            <constraint firstItem="Zl6-uu-thz" firstAttribute="trailing" secondItem="QYB-p0-c3K" secondAttribute="trailing" constant="-86" id="b9o-fT-Fgx"/>
+                            <constraint firstItem="xcn-20-0Ri" firstAttribute="top" secondItem="F0Q-hP-z60" secondAttribute="bottom" constant="8" symbolic="YES" id="cLJ-9B-uiJ"/>
+                            <constraint firstItem="xcn-20-0Ri" firstAttribute="leading" secondItem="QYB-p0-c3K" secondAttribute="leading" constant="86" id="czD-fS-64f"/>
+                            <constraint firstItem="F0Q-hP-z60" firstAttribute="trailing" secondItem="QYB-p0-c3K" secondAttribute="trailing" constant="-86" id="eDt-S1-Qtm"/>
+                            <constraint firstItem="xcn-20-0Ri" firstAttribute="top" secondItem="F0Q-hP-z60" secondAttribute="bottom" constant="8" id="iva-zD-5qT"/>
+                            <constraint firstItem="7hr-Vp-oxE" firstAttribute="top" secondItem="Zl6-uu-thz" secondAttribute="bottom" constant="8" id="k3T-tB-SHw"/>
+                            <constraint firstItem="ZeO-8y-QmW" firstAttribute="trailing" secondItem="QYB-p0-c3K" secondAttribute="trailing" constant="-86" id="tMr-ET-dWP"/>
+                            <constraint firstItem="F0Q-hP-z60" firstAttribute="top" secondItem="QYB-p0-c3K" secondAttribute="top" constant="277" id="xNJ-tV-y5M"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToLogIn" modalPresentationStyle="currentContext" id="JbM-mq-ZDt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Swq-6e-646" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="309" y="-573"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -19,8 +97,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="324-L9-yTs">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="qqC-kS-JYA">
-                                <rect key="frame" x="86" y="487" width="242" height="51"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User ID" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="qqC-kS-JYA">
+                                <rect key="frame" x="86" y="513" width="242" height="51"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="1a8-Ka-psJ"/>
@@ -29,13 +107,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pca-oE-gu4">
-                                <rect key="frame" x="77" y="238" width="260" height="270.5"/>
-                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="80"/>
+                                <rect key="frame" x="83.5" y="248" width="247" height="257"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="76"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBb-cM-DFn">
-                                <rect key="frame" x="172" y="563" width="70" height="53"/>
+                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBb-cM-DFn">
+                                <rect key="frame" x="86" y="633" width="70" height="53"/>
                                 <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="12"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="LOGIN">
@@ -46,25 +124,52 @@
                                     <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="587-1A-oRh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eox-wB-SKg">
+                                <rect key="frame" x="240" y="633" width="88" height="53"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="12"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="SIGN UP">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fth-yI-adU"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Nr8-PJ-k5w">
+                                <rect key="frame" x="86" y="572" width="242" height="51"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="b6p-fu-PtH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="324-L9-yTs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="0za-mI-0Mm"/>
-                            <constraint firstItem="Pca-oE-gu4" firstAttribute="centerX" secondItem="qqC-kS-JYA" secondAttribute="centerX" id="EEY-J2-f1C"/>
-                            <constraint firstItem="qqC-kS-JYA" firstAttribute="centerX" secondItem="tBb-cM-DFn" secondAttribute="centerX" id="J5O-4s-REQ"/>
-                            <constraint firstItem="324-L9-yTs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kvr-hm-3NV"/>
-                            <constraint firstItem="Pca-oE-gu4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="194" id="Q3d-fa-Mve"/>
-                            <constraint firstItem="324-L9-yTs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZN8-0c-hU2"/>
-                            <constraint firstItem="324-L9-yTs" firstAttribute="centerX" secondItem="tBb-cM-DFn" secondAttribute="centerX" id="bRb-pw-vjS"/>
-                            <constraint firstItem="324-L9-yTs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="evK-qb-pQi"/>
-                            <constraint firstItem="tBb-cM-DFn" firstAttribute="top" secondItem="qqC-kS-JYA" secondAttribute="bottom" constant="25" id="jQs-UE-aPB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tBb-cM-DFn" secondAttribute="bottom" constant="246" id="qNk-Ng-pz5"/>
-                            <constraint firstItem="qqC-kS-JYA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="86" id="qYM-fe-JEj"/>
+                            <constraint firstItem="Nr8-PJ-k5w" firstAttribute="top" secondItem="qqC-kS-JYA" secondAttribute="bottom" constant="8" id="BhJ-bb-2wn"/>
+                            <constraint firstItem="eox-wB-SKg" firstAttribute="leading" secondItem="tBb-cM-DFn" secondAttribute="trailing" constant="84" id="EGu-x8-bDC"/>
+                            <constraint firstItem="324-L9-yTs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="G2i-TC-Dh2"/>
+                            <constraint firstItem="Pca-oE-gu4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="204" id="I3t-YR-9E0"/>
+                            <constraint firstItem="eox-wB-SKg" firstAttribute="top" secondItem="Nr8-PJ-k5w" secondAttribute="bottom" constant="10" id="KJ8-T9-7Wc"/>
+                            <constraint firstItem="tBb-cM-DFn" firstAttribute="leading" secondItem="qqC-kS-JYA" secondAttribute="leading" id="KmA-vT-Ie2"/>
+                            <constraint firstItem="qqC-kS-JYA" firstAttribute="top" secondItem="Pca-oE-gu4" secondAttribute="bottom" constant="8" id="O9r-iV-FQO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eox-wB-SKg" secondAttribute="trailing" constant="86" id="Pyq-u5-9eZ"/>
+                            <constraint firstItem="324-L9-yTs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Sfb-BG-h17"/>
+                            <constraint firstItem="324-L9-yTs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gH0-AK-I6S"/>
+                            <constraint firstItem="qqC-kS-JYA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gVT-EW-BlS"/>
+                            <constraint firstItem="324-L9-yTs" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="jkJ-eO-4T9"/>
+                            <constraint firstItem="Nr8-PJ-k5w" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oJ1-mm-a5a"/>
+                            <constraint firstItem="Nr8-PJ-k5w" firstAttribute="leading" secondItem="qqC-kS-JYA" secondAttribute="leading" id="pcl-4Z-YGx"/>
+                            <constraint firstItem="Pca-oE-gu4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qz1-i1-dAI"/>
+                            <constraint firstItem="tBb-cM-DFn" firstAttribute="top" secondItem="Nr8-PJ-k5w" secondAttribute="bottom" constant="10" id="sbF-yg-z4G"/>
                         </constraints>
                     </view>
                     <connections>
                         <segue destination="cHa-fN-7av" kind="presentation" identifier="goToSecond" modalPresentationStyle="currentContext" id="x4K-eh-hOh"/>
+                        <segue destination="Q0m-0s-xBC" kind="presentation" identifier="goToSignUp" modalPresentationStyle="currentContext" id="yBM-Ty-y6B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -144,6 +249,8 @@
                     <navigationItem key="navigationItem" id="bJD-6P-8xL"/>
                     <connections>
                         <outlet property="bookButton" destination="OAL-0v-YcW" id="i7r-J6-Jtd"/>
+                        <outlet property="bookButton2" destination="fs7-BY-81R" id="dL4-Ba-rU9"/>
+                        <outlet property="bookButton3" destination="wo0-LA-jbm" id="MUv-Hu-wam"/>
                         <segue destination="FEg-Rm-KOX" kind="presentation" identifier="goToNewBook" modalPresentationStyle="currentContext" id="b7M-7a-c4d"/>
                         <segue destination="TIh-Fy-7az" kind="presentation" identifier="goToRead" modalPresentationStyle="currentContext" id="7Ja-gA-yaY"/>
                     </connections>
@@ -307,8 +414,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="b7M-7a-c4d"/>
-        <segue reference="x2Q-MH-w5n"/>
+        <segue reference="x4K-eh-hOh"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="background" width="2124" height="1062"/>
