@@ -23,6 +23,8 @@
 		FA8E61352672465000DBFF1A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E61342672465000DBFF1A /* HomeModel.swift */; };
 		FA8E61372672468A00DBFF1A /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E61362672468A00DBFF1A /* BookModel.swift */; };
 		FA922324267DCC470090ACED /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA922323267DCC470090ACED /* SignupViewController.swift */; };
+		FAC9FAC8267E519D006D2A1B /* RankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9FAC7267E519D006D2A1B /* RankModel.swift */; };
+		FAC9FACA267E5229006D2A1B /* RankerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9FAC9267E5229006D2A1B /* RankerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		FA8E61342672465000DBFF1A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		FA8E61362672468A00DBFF1A /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		FA922323267DCC470090ACED /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		FAC9FAC7267E519D006D2A1B /* RankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankModel.swift; sourceTree = "<group>"; };
+		FAC9FAC9267E5229006D2A1B /* RankerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 			children = (
 				FA8E61342672465000DBFF1A /* HomeModel.swift */,
 				FA8E61362672468A00DBFF1A /* BookModel.swift */,
+				FAC9FAC9267E5229006D2A1B /* RankerModel.swift */,
+				FAC9FAC7267E519D006D2A1B /* RankModel.swift */,
 				FA269BA12674D34600EB87F6 /* ContentsModel.swift */,
 				FA269BA32674DD2500EB87F6 /* ReadModel.swift */,
 			);
@@ -196,11 +202,13 @@
 				57BD7CB9265429EE00618472 /* ViewController.swift in Sources */,
 				FA618210267E232100B37920 /* RankViewController.swift in Sources */,
 				FA922324267DCC470090ACED /* SignupViewController.swift in Sources */,
+				FAC9FAC8267E519D006D2A1B /* RankModel.swift in Sources */,
 				57BD7CB5265429EE00618472 /* AppDelegate.swift in Sources */,
 				FA8E61352672465000DBFF1A /* HomeModel.swift in Sources */,
 				57D7D71D2656C53100CF4B31 /* NewBookViewController.swift in Sources */,
 				FA269BA42674DD2500EB87F6 /* ReadModel.swift in Sources */,
 				57D7D71F2656C89300CF4B31 /* ReadViewController.swift in Sources */,
+				FAC9FACA267E5229006D2A1B /* RankerModel.swift in Sources */,
 				FA269BA22674D34600EB87F6 /* ContentsModel.swift in Sources */,
 				FA8E61372672468A00DBFF1A /* BookModel.swift in Sources */,
 				57BD7CB7265429EE00618472 /* SceneDelegate.swift in Sources */,

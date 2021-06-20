@@ -13,25 +13,70 @@ class ShelfViewController: UIViewController {
     var idGlobal: String = "myID"
     var userGlobal: String = "myUser"
    
-    @IBOutlet weak var bookButton: UIButton!
-    @IBOutlet weak var bookButton2: UIButton!
-    @IBOutlet weak var bookButton3: UIButton!
+    
+    @IBOutlet weak var bookImage1: UIImageView!
+    @IBOutlet weak var bookImage2: UIImageView!
+    @IBOutlet weak var bookImage3: UIImageView!
+    
+    
+    @IBAction func pick1(_ sender: UIButton) {
+        print("picked 1")
+    }
+    @IBAction func pick2(_ sender: UIButton) {
+        print("picked 2")
+    }
+    @IBAction func pick3(_ sender: UIButton) {
+        print("picked 3")
+    }
+    @IBOutlet weak var select1: UIButton!
+    @IBOutlet weak var select2: UIButton!
+    @IBOutlet weak var select3: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Shelf Loaded")
+        select1.setTitleColor(UIColor.clear, for: .normal)
+        select2.setTitleColor(UIColor.clear, for: .normal)
+        select3.setTitleColor(UIColor.clear, for: .normal)
+        
         if idGlobal == "1" {
-            bookButton.setImage(#imageLiteral(resourceName: "128-1"), for: .normal)
+            bookImage1.image=#imageLiteral(resourceName: "prince")
+            select1.setTitleColor(UIColor.link, for: .normal)
+            
         }
-//image function broken
-//        if idGlobal == "2" {
-//            bookButton2.setImage(#imageLiteral(resourceName: "128"), for: .normal)
-//        }
-//        if idGlobal == "3" {
-//            bookButton3.setImage(#imageLiteral(resourceName: "128-2"), for: .normal)
-//        }
+        else if idGlobal == "2" {
+            bookImage1.image=#imageLiteral(resourceName: "prince")
+            bookImage2.image=#imageLiteral(resourceName: "alice")
+            select1.setTitleColor(UIColor.link, for: .normal)
+            select2.setTitleColor(UIColor.link, for: .normal)
+
+
+            
+        }
+        else if idGlobal == "3" {
+            bookImage1.image=#imageLiteral(resourceName: "prince")
+            bookImage2.image=#imageLiteral(resourceName: "alice")
+            bookImage3.image=#imageLiteral(resourceName: "holmes")
+            
+            select1.setTitleColor(UIColor.link, for: .normal)
+            select2.setTitleColor(UIColor.link, for: .normal)
+            select3.setTitleColor(UIColor.link, for: .normal)
+
+
+          
+        }
+
     }
-    
+    @IBAction func readPressed(_ sender: UIButton) {
+        if idGlobal != "myID" {
+                    print("Book Selected")
+                    self.performSegue(withIdentifier: "goToRead", sender: self)
+                }
+                else {
+                    print("No Book")
+                }
+    }
     @IBAction func rankPressed(_ sender: UIButton) {
         let request = NSMutableURLRequest(url: NSURL(string: "http://34.239.175.64/createview.php")! as URL)
         request.httpMethod = "POST"
@@ -60,15 +105,8 @@ class ShelfViewController: UIViewController {
         print("Rank Selected")
         self.performSegue(withIdentifier: "goToRank", sender: self)
     }
-    @IBAction func bookPressed(_ sender: UIButton) {
-        if idGlobal != "myID" {
-            print("Book Selected")
-            self.performSegue(withIdentifier: "goToRead", sender: self)
-        }
-        else {
-            print("No Book")
-        }
-    }
+    
+   
     @IBAction func addPressed(_ sender: UIButton) {
         print("Plus Pressed")
         self.performSegue(withIdentifier: "goToNewBook", sender: self)

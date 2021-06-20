@@ -93,6 +93,8 @@ class NewBookViewController: UIViewController, UITableViewDataSource, UITableVie
             destinationVC.bookGlobal = bookGlobal
             destinationVC.idGlobal = idGlobal
             destinationVC.userGlobal = userGlobal
+           
+            
         }
     }
 }
